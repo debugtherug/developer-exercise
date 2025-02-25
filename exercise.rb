@@ -1,21 +1,27 @@
 class Exercise
 
-  # Assume that "str" is a sequence of words separated by spaces.
-  # Return a string in which every word in "str" that exceeds 4 characters is replaced with "marklar".
-  # If the word being replaced has a capital first letter, it should instead be replaced with "Marklar".
+  # Replaces words longer than 4 characters in a given string with "marklar" or "Marklar".
+  # 
+  # * If a word is capitalized, it is replaced with "Marklar".
+  # * Otherwise, it is replaced with "marklar".
+  #
+  # @param str [String] Input string consisting of words separated by spaces. 
+  # @return [String] Modified string with substitutions
   def self.marklar(str)
-    # TODO: Implement this method
     str.gsub(/\b[A-Za-z]{5,}\b/) do |word|
       word[0] == word[0].upcase ? "Marklar" : "marklar"
     end
   end
 
-  # Return the sum of all even numbers in the Fibonacci sequence, up to
-  # the "nth" term in the sequence
-  # eg. the Fibonacci sequence up to 6 terms is (1, 1, 2, 3, 5, 8),
-  # and the sum of its even numbers is (2 + 8) = 10
+  # Computes the sum of even Fibonacci numbers up to nth term. 
+  # 
+  # * The Fibonacci sequence starts with (1, 1, 2, 3, 5, 8, ...).
+  # * Only even numbers are added to the sum. 
+  # * If nth < 2, the sum is 0 since there are no even numbers before the second term. 
+  #
+  # @param nth [Integer] The number of terms to compute
+  # @return [Integer] Sum of even Fibonacci numbers before the second term. 
   def self.even_fibonacci(nth)
-    # TODO: Implement this method
     a, b, sum = 1, 1, 0
     (nth - 2).times do
       a, b = b, a + b
@@ -23,5 +29,5 @@ class Exercise
     end
     sum
   end
-
+  
 end
